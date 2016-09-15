@@ -28,21 +28,22 @@ function draw() {
   text(ts, width/2, height/2);
   ellipse(ex, ey, ed);
 
+
   if(ex+50 > rx && ex < rx + rw + 50 && ey < ry + rh + 50 && ey+50 > ry) {
-    background(255, 0, 0, 100);
-    ts = "found it";
-    if(doonce == 1){
+    if(doonce == 1 && squarestate == 1){
+      background(255, 0, 0, 100);
+      ts = "found it";
       score++;
       doonce = 0;
     }
     squarestate = 0;
   } else {
-    background(0, 255, 0, 100);
 
     if(squarestate == 1) {
+      background(0, 255, 0, 100);
+      ts = "find it";
       rect(rx, ry, rw, rh);
     }
-    ts = "find it";
     doonce = 1;
   }
 
