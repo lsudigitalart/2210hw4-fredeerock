@@ -7,6 +7,8 @@ var ts = "find it";
 var score = 0;
 var doonce = 1;
 
+var squarestate = 1;
+
 var rx = 200;
 var ry = 200;
 var rw = 100;
@@ -33,13 +35,16 @@ function draw() {
       score++;
       doonce = 0;
     }
+    squarestate = 0;
   } else {
     background(0, 255, 0, 100);
+
+    if(squarestate == 1) {
+      rect(rx, ry, rw, rh);
+    }
     ts = "find it";
     doonce = 1;
   }
-
-  rect(rx, ry, rw, rh);
 
   if(keyIsPressed) {
     if(key == "w"){
