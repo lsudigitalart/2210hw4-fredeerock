@@ -1,30 +1,27 @@
 var ex = 100;
 var ey = 100;
 var ed = 100;
-var speed = 1;
+var speed = 10;
 
-// var rx;
-// var ry;
-// var rw;
+var rx = 200;
+var ry = 200;
+var rw = 100;
+var rh = 100;
 
 function setup() {
   createCanvas(640, 480);
 }
 
 function draw() {
-  background(150);
-
-  var mdist = dist(mouseX, mouseY, ex, ey);
-
-  if (mdist < ed/2) {
-    fill(255);
-  } else {
-    fill(0);
-  }
+  background(150, 100);
 
   ellipse(ex, ey, ed);
 
-  // rect();
+  if(ex+50 > rx && ex < rx + rw + 50 && ey < ry + rh + 50 && ey+50 > ry) {
+    background(255, 0, 0, 100);
+  }
+
+  rect(rx, ry, rw, rh);
 
   if(keyIsPressed) {
     if(key == "w"){
