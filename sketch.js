@@ -1,18 +1,30 @@
 function setup() {
   createCanvas(640, 480);
-  background(0);
+
 }
 
 function draw() {
-  if(mouseX < width/2){
-    fill(255, 45, 32);
-    ellipse(width/2, height/2, 100);
+  background(150);
+  // if(mouseX < width/2){
+  //   fill(255, 45, 32);
+  //   ellipse(width/2, height/2, 100);
+  // }
+  //
+  // if(mouseX > width/2) {
+  //   fill(0, 45, 232);
+  //   ellipse(width/2, height/2, 100);
+  // }
+
+  var mdist = dist(mouseX, mouseY, width/2, height/2);
+
+  if (mdist < 100/2) {
+    fill(255);
+  } else {
+    fill(0);
   }
 
-  if(mouseX > width/2) {
-    fill(0, 45, 232);
-    ellipse(width/2, height/2, 100);
-  }
+  ellipse(width/2, height/2, 100);
+
 }
 
 function mouseReleased() {
