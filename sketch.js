@@ -19,4 +19,19 @@ function draw() {
 
   ellipse(ex, ey, ed);
 
+  if(keyIsPressed) {
+    if(key == "w"){
+      println("forward");
+    }
+    if(key == "a"){
+      println("left");
+    }
+    if(key == "d"){
+      println("right");
+    }
+    if(key == "s"){
+      println("back");
+    }
+  }
+
 }
